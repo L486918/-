@@ -5,7 +5,7 @@ if __name__ == '__main__':
 
     # load cascade classifier training file for haarcascade
     face_cascade = cv2.CascadeClassifier('./haarcascade_frontalface_default.xml')
-    
+
     # load test image
     img = cv2.imread('./Lena.png')
 
@@ -16,8 +16,8 @@ if __name__ == '__main__':
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 
     # draw the detected faces in the test image
-    for (x,y,w,h) in faces:
-        cv2.rectangle(img, (x,y), (x+w, y+h), (255, 0, 0), 2)
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
     # show and save the result
     cv2.imshow('img', img)
